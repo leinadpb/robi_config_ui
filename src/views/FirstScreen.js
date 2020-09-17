@@ -12,6 +12,10 @@ export const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   background-image: ${(props) => `url(${props.image})`};
   background-size: 100vw;
   color: white;
