@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { customTheme } from './theme';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ThemeProvider theme={customTheme}>
+        <CSSReset />
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
