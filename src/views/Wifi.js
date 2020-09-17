@@ -60,7 +60,7 @@ const Wifi = () => {
 
   useEffect(() => {
     if (window.navigator.onLine) {
-      // history.push('/');
+      history.push('/');
     }
     window.addEventListener('online', () => history.push('/'));
   }, [window.navigator.onLine]);
