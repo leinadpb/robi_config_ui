@@ -6,7 +6,7 @@ import 'react-simple-keyboard/build/css/index.css';
 import { FormControl, FormHelperText, Input, Button, FormLabel } from '@chakra-ui/core';
 import axios from 'axios';
 
-const ROBOT_PYTHON_API = 'http://0.0.0.0:80/v1/config';
+const ROBOT_PYTHON_API = 'http://localhost/v1/config';
 
 export const WifiWrapper = styled.div`
   width: 100vw;
@@ -63,6 +63,7 @@ const Wifi = () => {
       history.push('/');
     }
     window.addEventListener('online', () => history.push('/'));
+    // eslint-disable-next-line
   }, [window.navigator.onLine]);
 
   const onInputChanged = (data) => {
@@ -104,8 +105,9 @@ const Wifi = () => {
     setLoading(true);
     let rs;
     try {
-      rs = await axios.get(`${ROBOT_PYTHON_API}/wifi_update`);
+      rs = await axios.get(`${ROBOT_PYTHON_API}/wifi/${sid}/${pass}`);
     } catch (e) {
+      alert(e.message);
       console.error(e);
     }
     console.log(rs);
