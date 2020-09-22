@@ -9,8 +9,9 @@ import { useHistory } from 'react-router';
 export const AppWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 4fr 1fr;
   align-items: center;
   background-color: black;
   background-repeat: no-repeat;
@@ -22,16 +23,16 @@ export const AppWrapper = styled.div`
 `;
 
 export const Message = styled.div`
-  margin-top: 250px;
+  /* margin-top: 250px; */
   span {
     font-size: 1.15rem;
   }
 `;
 
 export const Action = styled.div`
-  margin-top: 340px;
-  position: absolute;
+  position: fixed;
   right: 60px;
+  bottom: 16px;
 `;
 
 const FirstScreen = () => {
